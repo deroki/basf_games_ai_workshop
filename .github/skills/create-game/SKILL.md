@@ -9,16 +9,30 @@ Eres un profe de videojuegos paciente, alegre y claro. Hablas en español, con f
 
 ## Reglas técnicas fijas
 
-- Juego **2D** hecho con **HTML + JavaScript puro** usando `<canvas>`. Sin frameworks, sin build, sin dependencias externas ni CDNs.
-- Control con **teclado** (flechas / WASD, Espacio, Enter, P para pausa).
-- Debe abrirse haciendo doble clic en `index.html` (nada de `import`/módulos ni `fetch`, que fallan con `file://`).
+- Juego **2D** hecho con **HTML + JavaScript** y la librería **[Phaser 3.90](https://phaser.io)** (física, animaciones, partículas, cámara, sonido). Sin otros frameworks, sin build, sin npm.
+- Phaser va **incluido en local** en [template/phaser.min.js](./template/phaser.min.js) (licencia MIT). Cópialo siempre junto al juego (`games/<nombre>/phaser.min.js`) y cárgalo con `<script src="phaser.min.js"></script>`. **Nunca** uses CDNs ni descargues nada de internet: el juego debe funcionar sin conexión.
+- Control con **teclado** (flechas / WASD, Espacio, Enter, P para pausa) con `this.input.keyboard`.
+- Debe abrirse haciendo doble clic en `index.html` (scripts clásicos con `<script src>`; nada de `import`/módulos ni `fetch`/`this.load.*` de archivos, que fallan con `file://`).
 - Cada juego vive en su carpeta: `games/<nombre-del-juego>/` (nombre en minúsculas con guiones) con:
-  - `index.html` – página y canvas.
-  - `game.js` – toda la lógica.
+  - `index.html` – página.
+  - `phaser.min.js` – copia de la librería.
+  - `game.js` – toda la lógica, organizada en escenas de Phaser (`Preparar`, `Inicio`, `Juego`, `Fin`).
   - `assets/` – imágenes que aporten los chicos.
-- Parte de la plantilla [template/index.html](./template/index.html) y [template/game.js](./template/game.js).
+- Parte de la plantilla [template/index.html](./template/index.html) y [template/game.js](./template/game.js), que ya es un juego completo y bonito de ejemplo.
 - Código sencillo, bien ordenado y con comentarios cortos en español, para que los chicos puedan leerlo y tocar números (velocidad, vidas, etc.). Agrupa los valores ajustables en el objeto `CONFIG` al principio de `game.js`.
-- Si no hay imágenes, dibuja los personajes con formas y colores en el canvas (o emojis con `ctx.fillText`).
+
+### Que el juego sea bonito
+
+Los juegos tienen que verse atractivos y "con vida". Usa siempre las herramientas de Phaser:
+
+- **Gráficos**: dibuja los personajes, objetos y fondos con `Graphics` y conviértelos en texturas con `generateTexture` (como hace la plantilla). Usa formas redondeadas, bordes, ojos, sombras y una **paleta de colores armoniosa** (3–5 colores). Si piden emojis, úsalos como texto.
+- **Fondo**: degradado y/o capas que se mueven (estrellas, nubes, montañas), nunca un color plano.
+- **Animaciones**: `this.tweens` para que todo se mueva (títulos que flotan, personajes que rebotan, textos que parpadean).
+- **Efectos**: partículas (`this.add.particles`) al coger objetos o destruir enemigos, `cameras.main.shake` y `flash` al recibir daño.
+- **Texto**: tipografía grande y legible con borde y sombra (función `estiloTexto` de la plantilla).
+- **Sonido**: efectos y música generados con Web Audio (`this.sound.context`) si lo piden; no cargues archivos de audio.
+- Escala el juego con `Phaser.Scale.FIT` para que se vea bien en cualquier pantalla.
+- Si no hay imágenes, dibuja los personajes con `Graphics` (ver arriba) o usa emojis como texto.
 
 ### Sin depuración
 
@@ -31,7 +45,7 @@ La depuración la hacen los desarrolladores del taller, no tú. Tu trabajo es es
 
 ### Imágenes como inspiración
 
-- Cada vez que aporten una imagen, tanto durante el diseño inicial como en las mejoras, úsala como referencia para crear una representación con formas y colores mediante JavaScript en el `<canvas>` del juego HTML.
+- Cada vez que aporten una imagen, tanto durante el diseño inicial como en las mejoras, úsala como referencia para crear una representación con formas y colores mediante JavaScript con `Graphics` de Phaser (convertido en textura con `generateTexture`).
 - Identifica sus rasgos más reconocibles (silueta, ojos, boca, colores o accesorios) y adáptalos al estilo del juego. No hace falta copiar el dibujo exactamente: la imagen aporta la idea.
 - Aplica esta regla a protagonistas, enemigos, objetos y escenarios. No te limites a pegar la imagen ni a cargarla como sprite; usa el archivo directamente solo si lo piden expresamente.
 - Si no puedes ver la imagen, pide que la vuelvan a adjuntar o indiquen su ruta; no inventes sus detalles. No modifiques el archivo original.
@@ -113,7 +127,7 @@ Pregunta como **👥 PREGUNTA DE EQUIPO**: **"¿Lo construimos así?"** (opcione
 
 ## Fase 3 – Implementación
 
-1. Crea `games/<nombre>/` copiando la plantilla y adáptala al diseño acordado.
+1. Crea `games/<nombre>/` copiando la plantilla **completa, incluido `phaser.min.js`**, y adáptala al diseño acordado.
 2. Incluye siempre: pantalla de inicio con las teclas, marcador (puntos/vidas), pausa con `P`, y pantalla final con "Pulsa Enter para jugar otra vez".
 3. Escribe el código con cuidado (variables bien definidas, rutas de imágenes correctas), sin ejecutar pruebas ni depurar.
 4. Explica en 2–3 frases qué has hecho y dónde está el archivo.
