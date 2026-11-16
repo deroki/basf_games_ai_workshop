@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo crear tu videojuego con IA · BASF Hub Madrid</title>
+<style>
+  :root { --basf: #004A96; --green: #21A366; --bg: #f3f7fc; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #1b2a3a; background: var(--bg); line-height: 1.7; }
+  header { background: var(--basf); color: #fff; padding: 20px 24px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  header .logo { background: #fff; padding: 10px 16px; border-radius: 8px; }
+  header .logo img { height: 110px; display: block; }
+  header .hub { font-size: 1.1rem; letter-spacing: .5px; }
+  header .hub strong { display: block; font-size: 1.4rem; }
+  .hero { background: linear-gradient(135deg, var(--basf), #0b72d9); color: #fff; text-align: center; padding: 44px 20px 52px; }
+  .hero h1 { margin: 0 0 12px; font-size: clamp(2rem, 5vw, 3rem); }
+  .hero p { max-width: 720px; margin: 0 auto; font-size: 1.2rem; opacity: .95; }
+  main { max-width: 860px; margin: 0 auto; padding: 24px 20px 56px; }
+  a { color: var(--basf); }
+  .back { display: inline-block; margin-bottom: 8px; font-weight: 700; }
+  .step { background: #fff; border-radius: 14px; padding: 4px 24px 18px; margin: 24px 0; box-shadow: 0 3px 10px rgba(0,40,90,.08); border-left: 8px solid var(--green); }
+  .step h2 { color: var(--basf); font-size: 1.6rem; }
+  .step h2 span { display: inline-block; background: var(--green); color: #fff; border-radius: 50%; width: 2.2rem; height: 2.2rem; line-height: 2.2rem; text-align: center; margin-right: 8px; font-size: 1.2rem; }
+  code { background: #e8eef7; padding: 2px 8px; border-radius: 6px; font-size: 1.05em; }
+  .tip { background: #fff8dc; border-left: 5px solid #f0b400; padding: 10px 16px; border-radius: 8px; }
+  footer { background: var(--basf); color: #fff; text-align: center; padding: 28px 20px; }
+  footer .logo { display: inline-block; background: #fff; padding: 8px 14px; border-radius: 8px; margin-bottom: 10px; }
+  footer .logo img { height: 80px; display: block; }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><img src="assets/basf-logo.svg" alt="BASF"></div>
+  <div class="hub">Promovido por<strong>BASF Hub Madrid</strong></div>
+</header>
+
+<section class="hero">
+  <h1>🤖 Crea tu propio videojuego con IA</h1>
+  <p>Una guía paso a paso para hacerlo en tu ordenador. ¡No hace falta saber programar!</p>
+</section>
+
+<main>
+  <a class="back" href="./">← Volver a los juegos</a>
+  <p class="tip">💡 Necesitas un ordenador con internet y, si eres menor de edad, la ayuda de un adulto para crear tus cuentas.</p>
+
+  <section class="step">
+    <h2><span>1</span>Instala Visual Studio Code</h2>
+    <p>Visual Studio Code (le llamamos <strong>VS Code</strong>) es el programa donde vas a trabajar con la IA. Es gratis.</p>
+    <ol>
+      <li>Entra en <a href="https://code.visualstudio.com/download">code.visualstudio.com/download</a>.</li>
+      <li>Pulsa el botón de tu ordenador (Windows, Mac o Linux).</li>
+      <li>Abre el archivo que se ha descargado y pulsa «Siguiente» hasta terminar.</li>
+      <li>Abre VS Code. ¡Ya lo tienes!</li>
+    </ol>
+  </section>
+
+  <section class="step">
+    <h2><span>2</span>Activa Copilot, tu ayudante de IA</h2>
+    <p><strong>GitHub Copilot</strong> es la inteligencia artificial que va a crear tu juego. Tiene una versión gratuita para probar.</p>
+    <ol>
+      <li>Crea una cuenta gratis en <a href="https://github.com/signup">github.com</a> (con ayuda de un adulto).</li>
+      <li>En VS Code, mira abajo a la derecha: verás el icono de Copilot (una carita con gafas). Púlsalo.</li>
+      <li>Pulsa <strong>«Sign in»</strong> (iniciar sesión) y entra con tu cuenta de GitHub. Se abrirá el navegador: pulsa «Autorizar».</li>
+      <li>Si te ofrece un plan, elige <strong>Copilot Free</strong> (gratis).</li>
+      <li>Se abre el chat de Copilot. Abajo, junto al cuadro donde escribes, hay un botón con el nombre de un <strong>modelo</strong> (el «cerebro» de la IA). Púlsalo y elige uno de los disponibles sin candado. Con el plan gratis tienes un número de mensajes al mes, así que ¡úsalos bien!</li>
+    </ol>
+    <p class="tip">💡 Si no ves el chat, pulsa a la vez las teclas <code>Ctrl</code> + <code>Alt</code> + <code>I</code> (en Mac: <code>Control</code> + <code>Cmd</code> + <code>I</code>).</p>
+  </section>
+
+  <section class="step">
+    <h2><span>3</span>Descarga el taller</h2>
+    <p>Aquí está todo lo que la IA necesita para guiarte.</p>
+    <ol>
+      <li>Entra en <a href="https://github.com/deroki/basf_games_ai_workshop">github.com/deroki/basf_games_ai_workshop</a>.</li>
+      <li>Pulsa el botón verde <strong>«Code»</strong> y luego <strong>«Download ZIP»</strong>.</li>
+      <li>Busca el archivo en tu carpeta de Descargas, haz clic derecho y elige <strong>«Extraer todo»</strong> (en Mac, haz doble clic).</li>
+      <li>En VS Code pulsa <strong>Archivo → Abrir carpeta</strong> y elige la carpeta que acabas de extraer.</li>
+      <li>Si te pregunta «¿Confías en los autores?», pulsa <strong>«Sí, confío»</strong>.</li>
+    </ol>
+  </section>
+
+  <section class="step">
+    <h2><span>4</span>Crea tu juego</h2>
+    <ol>
+      <li>En el chat de Copilot, escribe <code>/create_game</code> y pulsa Enter. ¡Así despiertas a la IA creadora de juegos!</li>
+      <li><strong>Contesta a sus preguntas.</strong> Primero te pregunta cuántos sois en el equipo y luego cómo es el juego, quién es el personaje, dónde ocurre la aventura y cuáles son los enemigos. Algunas preguntas las responde todo el equipo y otras cada jugador por turnos. ¡Hasta puedes enseñarle un dibujo!</li>
+      <li><strong>Dile «OK».</strong> La IA te cuenta cómo será tu juego. Si os gusta, decídselo.</li>
+      <li><strong>¡Magia!</strong> La IA crea el juego y se abre en el navegador para jugar. Se maneja con el teclado.</li>
+      <li><strong>Pide mejoras:</strong> más rápido, más enemigos, mejores dibujos… tantas veces como queráis, hasta decir «¡Ya está, me encanta!».</li>
+    </ol>
+    <p class="tip">💡 El truco: cuanto mejor expliques tus ideas, mejor saldrá el juego. Si algo no funciona, ¡cuéntaselo a la IA con tus palabras!</p>
+  </section>
+
+  <section class="step">
+    <h2><span>5</span>Vuelve a jugar cuando quieras</h2>
+    <p>Tu juego se guarda en la carpeta <code>games</code>, dentro de la carpeta del taller. Para jugar otra vez, abre la carpeta de tu juego y haz doble clic en el archivo <code>index.html</code>. No necesitas internet.</p>
+  </section>
+
+  <a class="back" href="./">← Volver a los juegos</a>
+</main>
+
+<footer>
+  <div class="logo"><img src="assets/basf-logo.svg" alt="BASF"></div>
+  <div>Taller de videojuegos con IA · promovido por <strong>BASF Hub Madrid</strong></div>
+</footer>
+</body>
+</html>
