@@ -1,9 +1,25 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Taller de videojuegos con IA · BASF Hub Madrid</title>
+<title>Video game workshop with AI · BASF Hub Madrid</title>
+<script>
+// Pick the language from the saved choice, or from the browser language settings
+(function () {
+  var supported = ['es', 'fr', 'de', 'pt', 'ms', 'hi'], saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  var wanted = saved;
+  if (!wanted) {
+    var prefs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
+    for (var i = 0; i < prefs.length; i++) {
+      var code = String(prefs[i]).slice(0, 2).toLowerCase();
+      if (code === 'en' || supported.indexOf(code) !== -1) { wanted = code; break; }
+    }
+  }
+  if (wanted && supported.indexOf(wanted) !== -1) { location.replace(wanted + '/' + location.search + location.hash); }
+})();
+</script>
 <style>
   :root { --basf: #004A96; --green: #21A366; --bg: #f3f7fc; }
   * { box-sizing: border-box; }
@@ -31,22 +47,29 @@
   footer { background: var(--basf); color: #fff; text-align: center; padding: 28px 20px; }
   footer .logo { display: inline-block; background: #fff; padding: 8px 14px; border-radius: 8px; margin-bottom: 10px; }
   footer .logo img { height: 80px; display: block; }
+
+  .langbar { background: #00346b; padding: 8px 24px; display: flex; gap: 10px; justify-content: flex-end; align-items: center; flex-wrap: wrap; }
+  .langbar a { display: inline-flex; align-items: center; gap: 6px; color: #fff; text-decoration: none; font-size: .9rem; padding: 3px 8px; border-radius: 6px; border: 2px solid transparent; }
+  .langbar a:hover { background: rgba(255,255,255,.15); }
+  .langbar a.on { border-color: #fff; font-weight: 700; }
+  .langbar img { width: 26px; height: auto; display: block; border-radius: 2px; }
 </style>
 </head>
 <body>
+<nav class="langbar" aria-label="Language"><a class="on" href="./" hreflang="en" data-lang="en"><img src="assets/flags/en.png" alt=""> English</a><a href="es/" hreflang="es" data-lang="es"><img src="assets/flags/es.png" alt=""> Español</a><a href="fr/" hreflang="fr" data-lang="fr"><img src="assets/flags/fr.png" alt=""> Français</a><a href="de/" hreflang="de" data-lang="de"><img src="assets/flags/de.png" alt=""> Deutsch</a><a href="pt/" hreflang="pt" data-lang="pt"><img src="assets/flags/pt.png" alt=""> Português</a><a href="ms/" hreflang="ms" data-lang="ms"><img src="assets/flags/ms.png" alt=""> Bahasa Melayu</a><a href="hi/" hreflang="hi" data-lang="hi"><img src="assets/flags/hi.png" alt=""> हिन्दी</a></nav>
 <header>
   <div class="logo"><img src="assets/basf-logo.svg" alt="BASF"></div>
-  <div class="hub">Promovido por<strong>BASF Hub Madrid</strong></div>
+  <div class="hub">Promoted by<strong>BASF Hub Madrid</strong></div>
 </header>
 
 <section class="hero">
-  <h1>🎮 Taller de videojuegos con IA</h1>
-  <p>Un taller para los hijos e hijas de los trabajadores de BASF, donde aprendieron a crear sus propios videojuegos con ayuda de la inteligencia artificial.</p>
+  <h1>🎮 Video game workshop with AI</h1>
+  <p>A workshop for the children of BASF employees, where they learned to create their own video games with the help of artificial intelligence.</p>
 </section>
 
 <main>
-  <h2 id="juegos">🕹️ ¡Juega a nuestros juegos!</h2>
-  <p class="hint">Haz clic en un juego para jugar desde tu ordenador. Se juega con el teclado y no hay que instalar nada.</p>
+  <h2 id="games">🕹️ Play our games!</h2>
+  <p class="hint">Click a game to play it on your computer. You play with the keyboard and there is nothing to install.</p>
   <ul class="games">
     <li><a href="games/dragon-ball/"><span>🐉</span>Dragon Ball</a></li>
     <li><a href="games/el-super-juego-de-coches/"><span>🏎️</span>El Súper Juego de Coches</a></li>
@@ -54,21 +77,32 @@
     <li><a href="games/super-cazadores/"><span>🎯</span>Súper Cazadores</a></li>
   </ul>
 
-  <h2>📖 Sobre el taller</h2>
+  <h2>📖 About the workshop</h2>
   <div class="card">
-    <p>El <strong>BASF Hub Madrid</strong> organizó este taller de videojuegos con IA para los hijos e hijas de las personas que trabajan en BASF. Trabajaron en equipos y, en solo 1 hora, pasaron de una idea a un juego que se juega en el ordenador.</p>
-    <p>Los voluntarios de BASF <a href="https://github.com/DiazJ39_basf">Carlos Díaz</a>, <a href="https://github.com/EspinM2_basf">Marta Espinosa</a> y <a href="https://github.com/U10116059_basf">Noelia Moreno</a> acompañaron a los equipos. Cada uno se sentó con un equipo y trabajó codo con codo con los niños y niñas: les escuchó, les ayudó a explicar bien sus ideas a la IA, probó el juego con ellos y celebró cada mejora. ¡Fueron un miembro más del equipo!</p>
-    <p>Para jugar de nuevo a los juegos o enseñárselos a la familia, basta con entrar en esta página y elegir uno de la lista.</p>
+    <p>The <strong>BASF Hub Madrid</strong> organised this video game workshop with AI for the sons and daughters of BASF employees. They worked in teams and, in just 1 hour, went from an idea to a game you can play on the computer.</p>
+    <p>The BASF volunteers <a href="https://github.com/DiazJ39_basf">Carlos Díaz</a>, <a href="https://github.com/EspinM2_basf">Marta Espinosa</a> and <a href="https://github.com/U10116059_basf">Noelia Moreno</a> joined the teams. Each of them sat with one team and worked side by side with the kids: they listened, helped explain ideas to the AI, tested the game together and cheered every improvement. They were one more member of the team!</p>
+    <p>To play the games again or show them to your family, just visit this page and pick one from the list.</p>
   </div>
 
-  <h2>🤖 ¿Quieres crear tu propio juego?</h2>
-  <p class="hint">Tú también puedes hacerlo en casa, con la ayuda de la IA. <a href="guia.html"><strong>👉 Mira la guía paso a paso</strong></a></p>
-  <h2>📂 Dónde está todo</h2>
-  <p class="hint">Todos los juegos viven en esta dirección de internet: <a href="https://github.com/deroki/basf_games_ai_workshop">github.com/deroki/basf_games_ai_workshop</a></p></main>
+  <h2>🤖 Want to create your own game?</h2>
+  <p class="hint">You can do it too, at home, with the help of AI. <a href="guide.html"><strong>👉 See the step-by-step guide</strong></a></p>
+
+  <h2>📂 Where is everything?</h2>
+  <p class="hint">All the games live at this internet address: <a href="https://github.com/deroki/basf_games_ai_workshop">github.com/deroki/basf_games_ai_workshop</a></p>
+</main>
 
 <footer>
   <div class="logo"><img src="assets/basf-logo.svg" alt="BASF"></div>
-  <div>Taller de videojuegos con IA · promovido por <strong>BASF Hub Madrid</strong></div>
+  <div>Video game workshop with AI · promoted by <strong>BASF Hub Madrid</strong></div>
 </footer>
+<script>
+(function () {
+  try {
+    document.querySelectorAll('.langbar a').forEach(function (a) {
+      a.addEventListener('click', function () { localStorage.setItem('lang', a.getAttribute('data-lang')); });
+    });
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>

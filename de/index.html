@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Videospiel-Workshop mit KI · BASF Hub Madrid</title>
+<style>
+  :root { --basf: #004A96; --green: #21A366; --bg: #f3f7fc; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #1b2a3a; background: var(--bg); line-height: 1.6; }
+  header { background: var(--basf); color: #fff; padding: 20px 24px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  header .logo { background: #fff; padding: 10px 16px; border-radius: 8px; }
+  header .logo img { height: 110px; display: block; }
+  header .hub { font-size: 1.1rem; letter-spacing: .5px; }
+  header .hub strong { display: block; font-size: 1.4rem; }
+  .hero { background: linear-gradient(135deg, var(--basf), #0b72d9); color: #fff; text-align: center; padding: 56px 20px 64px; }
+  .hero h1 { margin: 0 0 12px; font-size: clamp(2rem, 5vw, 3.2rem); }
+  .hero p { max-width: 720px; margin: 0 auto; font-size: 1.2rem; opacity: .95; }
+  main { max-width: 1000px; margin: 0 auto; padding: 32px 20px 56px; }
+  h2 { color: var(--basf); font-size: 1.8rem; margin-top: 48px; }
+  .games { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; padding: 0; list-style: none; }
+  .games a { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 120px; padding: 20px; background: #fff; color: var(--basf); border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 1.2rem; text-align: center; box-shadow: 0 3px 10px rgba(0,40,90,.12); border-bottom: 5px solid var(--green); transition: transform .15s; }
+  .games a:hover, .games a:focus { transform: translateY(-4px); }
+  .games a span { font-size: 2rem; }
+  .hint { background: #fff; border-left: 5px solid var(--green); padding: 12px 16px; border-radius: 8px; }
+  .card { background: #fff; border-radius: 14px; padding: 8px 24px 20px; box-shadow: 0 3px 10px rgba(0,40,90,.08); }
+  .people { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; padding: 0; list-style: none; }
+  .people li { background: #fff; border-radius: 14px; padding: 18px; text-align: center; box-shadow: 0 3px 10px rgba(0,40,90,.08); }
+  .people a { color: var(--basf); word-break: break-all; }
+  .people b { display: block; color: var(--basf); font-size: 1.2rem; }
+  footer { background: var(--basf); color: #fff; text-align: center; padding: 28px 20px; }
+  footer .logo { display: inline-block; background: #fff; padding: 8px 14px; border-radius: 8px; margin-bottom: 10px; }
+  footer .logo img { height: 80px; display: block; }
+
+  .langbar { background: #00346b; padding: 8px 24px; display: flex; gap: 10px; justify-content: flex-end; align-items: center; flex-wrap: wrap; }
+  .langbar a { display: inline-flex; align-items: center; gap: 6px; color: #fff; text-decoration: none; font-size: .9rem; padding: 3px 8px; border-radius: 6px; border: 2px solid transparent; }
+  .langbar a:hover { background: rgba(255,255,255,.15); }
+  .langbar a.on { border-color: #fff; font-weight: 700; }
+  .langbar img { width: 26px; height: auto; display: block; border-radius: 2px; }
+</style>
+</head>
+<body>
+<nav class="langbar" aria-label="Language"><a href="../" hreflang="en" data-lang="en"><img src="../assets/flags/en.png" alt=""> English</a><a href="../es/" hreflang="es" data-lang="es"><img src="../assets/flags/es.png" alt=""> Español</a><a href="../fr/" hreflang="fr" data-lang="fr"><img src="../assets/flags/fr.png" alt=""> Français</a><a class="on" href="./" hreflang="de" data-lang="de"><img src="../assets/flags/de.png" alt=""> Deutsch</a><a href="../pt/" hreflang="pt" data-lang="pt"><img src="../assets/flags/pt.png" alt=""> Português</a><a href="../ms/" hreflang="ms" data-lang="ms"><img src="../assets/flags/ms.png" alt=""> Bahasa Melayu</a><a href="../hi/" hreflang="hi" data-lang="hi"><img src="../assets/flags/hi.png" alt=""> हिन्दी</a></nav>
+<header>
+  <div class="logo"><img src="../assets/basf-logo.svg" alt="BASF"></div>
+  <div class="hub">Veranstaltet vom<strong>BASF Hub Madrid</strong></div>
+</header>
+
+<section class="hero">
+  <h1>🎮 Videospiel-Workshop mit KI</h1>
+  <p>Ein Workshop für die Kinder von BASF-Mitarbeitenden, in dem sie mit Hilfe von künstlicher Intelligenz ihre eigenen Videospiele erschaffen haben.</p>
+</section>
+
+<main>
+  <h2 id="games">🕹️ Spiel unsere Spiele!</h2>
+  <p class="hint">Klick auf ein Spiel, um es auf deinem Computer zu spielen. Du spielst mit der Tastatur und musst nichts installieren.</p>
+  <ul class="games">
+    <li><a href="../games/dragon-ball/"><span>🐉</span>Dragon Ball</a></li>
+    <li><a href="../games/el-super-juego-de-coches/"><span>🏎️</span>El Súper Juego de Coches</a></li>
+    <li><a href="../games/pokecarrera/"><span>🏁</span>Pokecarrera</a></li>
+    <li><a href="../games/super-cazadores/"><span>🎯</span>Súper Cazadores</a></li>
+  </ul>
+
+  <h2>📖 Über den Workshop</h2>
+  <div class="card">
+    <p>Der <strong>BASF Hub Madrid</strong> hat diesen Videospiel-Workshop mit KI für die Söhne und Töchter von BASF-Mitarbeitenden organisiert. Sie haben in Teams gearbeitet und sind in nur 1 Stunde von einer Idee zu einem Spiel gekommen, das man am Computer spielen kann.</p>
+    <p>Die BASF-Freiwilligen <a href="https://github.com/DiazJ39_basf">Carlos Díaz</a>, <a href="https://github.com/EspinM2_basf">Marta Espinosa</a> und <a href="https://github.com/U10116059_basf">Noelia Moreno</a> haben die Teams begleitet. Jede und jeder setzte sich zu einem Team und arbeitete Seite an Seite mit den Kindern: zuhören, helfen, der KI die Ideen gut zu erklären, das Spiel gemeinsam testen und jede Verbesserung feiern. Sie waren ein weiteres Mitglied des Teams!</p>
+    <p>Um die Spiele noch einmal zu spielen oder deiner Familie zu zeigen, besuch einfach diese Seite und wähle eines aus der Liste.</p>
+  </div>
+
+  <h2>🤖 Willst du dein eigenes Spiel erstellen?</h2>
+  <p class="hint">Das kannst du auch zu Hause machen, mit Hilfe der KI. <a href="guide.html"><strong>👉 Zur Schritt-für-Schritt-Anleitung</strong></a></p>
+
+  <h2>📂 Wo ist alles?</h2>
+  <p class="hint">Alle Spiele findest du unter dieser Internetadresse: <a href="https://github.com/deroki/basf_games_ai_workshop">github.com/deroki/basf_games_ai_workshop</a></p>
+</main>
+
+<footer>
+  <div class="logo"><img src="../assets/basf-logo.svg" alt="BASF"></div>
+  <div>Videospiel-Workshop mit KI · veranstaltet vom <strong>BASF Hub Madrid</strong></div>
+</footer>
+<script>
+(function () {
+  try {
+    document.querySelectorAll('.langbar a').forEach(function (a) {
+      a.addEventListener('click', function () { localStorage.setItem('lang', a.getAttribute('data-lang')); });
+    });
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>

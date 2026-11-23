@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>So erstellst du dein Videospiel mit KI · BASF Hub Madrid</title>
+<style>
+  :root { --basf: #004A96; --green: #21A366; --bg: #f3f7fc; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #1b2a3a; background: var(--bg); line-height: 1.7; }
+  header { background: var(--basf); color: #fff; padding: 20px 24px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  header .logo { background: #fff; padding: 10px 16px; border-radius: 8px; }
+  header .logo img { height: 110px; display: block; }
+  header .hub { font-size: 1.1rem; letter-spacing: .5px; }
+  header .hub strong { display: block; font-size: 1.4rem; }
+  .hero { background: linear-gradient(135deg, var(--basf), #0b72d9); color: #fff; text-align: center; padding: 44px 20px 52px; }
+  .hero h1 { margin: 0 0 12px; font-size: clamp(2rem, 5vw, 3rem); }
+  .hero p { max-width: 720px; margin: 0 auto; font-size: 1.2rem; opacity: .95; }
+  main { max-width: 860px; margin: 0 auto; padding: 24px 20px 56px; }
+  a { color: var(--basf); }
+  .back { display: inline-block; margin-bottom: 8px; font-weight: 700; }
+  .step { background: #fff; border-radius: 14px; padding: 4px 24px 18px; margin: 24px 0; box-shadow: 0 3px 10px rgba(0,40,90,.08); border-left: 8px solid var(--green); }
+  .step h2 { color: var(--basf); font-size: 1.6rem; }
+  .step h2 span { display: inline-block; background: var(--green); color: #fff; border-radius: 50%; width: 2.2rem; height: 2.2rem; line-height: 2.2rem; text-align: center; margin-right: 8px; font-size: 1.2rem; }
+  code { background: #e8eef7; padding: 2px 8px; border-radius: 6px; font-size: 1.05em; }
+  .tip { background: #fff8dc; border-left: 5px solid #f0b400; padding: 10px 16px; border-radius: 8px; }
+  footer { background: var(--basf); color: #fff; text-align: center; padding: 28px 20px; }
+  footer .logo { display: inline-block; background: #fff; padding: 8px 14px; border-radius: 8px; margin-bottom: 10px; }
+  footer .logo img { height: 80px; display: block; }
+
+  .langbar { background: #00346b; padding: 8px 24px; display: flex; gap: 10px; justify-content: flex-end; align-items: center; flex-wrap: wrap; }
+  .langbar a { display: inline-flex; align-items: center; gap: 6px; color: #fff; text-decoration: none; font-size: .9rem; padding: 3px 8px; border-radius: 6px; border: 2px solid transparent; }
+  .langbar a:hover { background: rgba(255,255,255,.15); }
+  .langbar a.on { border-color: #fff; font-weight: 700; }
+  .langbar img { width: 26px; height: auto; display: block; border-radius: 2px; }
+</style>
+</head>
+<body>
+<nav class="langbar" aria-label="Language"><a href="../guide.html" hreflang="en" data-lang="en"><img src="../assets/flags/en.png" alt=""> English</a><a href="../es/guia.html" hreflang="es" data-lang="es"><img src="../assets/flags/es.png" alt=""> Español</a><a href="../fr/guide.html" hreflang="fr" data-lang="fr"><img src="../assets/flags/fr.png" alt=""> Français</a><a class="on" href="guide.html" hreflang="de" data-lang="de"><img src="../assets/flags/de.png" alt=""> Deutsch</a><a href="../pt/guide.html" hreflang="pt" data-lang="pt"><img src="../assets/flags/pt.png" alt=""> Português</a><a href="../ms/guide.html" hreflang="ms" data-lang="ms"><img src="../assets/flags/ms.png" alt=""> Bahasa Melayu</a><a href="../hi/guide.html" hreflang="hi" data-lang="hi"><img src="../assets/flags/hi.png" alt=""> हिन्दी</a></nav>
+<header>
+  <div class="logo"><img src="../assets/basf-logo.svg" alt="BASF"></div>
+  <div class="hub">Veranstaltet vom<strong>BASF Hub Madrid</strong></div>
+</header>
+
+<section class="hero">
+  <h1>🤖 Erstelle dein eigenes Videospiel mit KI</h1>
+  <p>Eine Schritt-für-Schritt-Anleitung für deinen Computer. Du musst nicht programmieren können!</p>
+</section>
+
+<main>
+  <a class="back" href="./">← Zurück zu den Spielen</a>
+  <p class="tip">💡 Du brauchst einen Computer mit Internet und, wenn du minderjährig bist, die Hilfe eines Erwachsenen, um deine Konten zu erstellen.</p>
+
+  <section class="step">
+    <h2><span>1</span>Installiere Visual Studio Code</h2>
+    <p>Visual Studio Code (wir sagen <strong>VS Code</strong>) ist das Programm, in dem du mit der KI arbeitest. Es ist kostenlos.</p>
+    <ol>
+      <li>Geh auf <a href="https://code.visualstudio.com/download">code.visualstudio.com/download</a>.</li>
+      <li>Klick auf den Button für deinen Computer (Windows, Mac oder Linux).</li>
+      <li>Öffne die heruntergeladene Datei und klick auf „Weiter“, bis alles fertig ist.</li>
+      <li>Öffne VS Code. Geschafft!</li>
+    </ol>
+  </section>
+
+  <section class="step">
+    <h2><span>2</span>Aktiviere Copilot, deinen KI-Helfer</h2>
+    <p><strong>GitHub Copilot</strong> ist die künstliche Intelligenz, die dein Spiel erstellt. Es gibt eine kostenlose Version zum Ausprobieren.</p>
+    <ol>
+      <li>Erstelle ein kostenloses Konto auf <a href="https://github.com/signup">github.com</a> (mit Hilfe eines Erwachsenen).</li>
+      <li>Schau in VS Code nach unten rechts: Dort siehst du das Copilot-Symbol. Klick darauf.</li>
+      <li>Klick auf <strong>„Sign in“</strong> (Anmelden) und melde dich mit deinem GitHub-Konto an. Der Browser öffnet sich: Klick auf „Authorize“.</li>
+      <li>Wenn dir ein Tarif angeboten wird, wähle <strong>Copilot Free</strong> (kostenlos).</li>
+      <li>Der Copilot-Chat öffnet sich. Unter dem Eingabefeld ist ein Button mit dem Namen eines <strong>Modells</strong> (dem „Gehirn“ der KI). Klick darauf und wähle eines ohne Schloss. Im kostenlosen Tarif hast du pro Monat nur eine begrenzte Anzahl an Nachrichten, nutze sie also gut!</li>
+    </ol>
+    <p class="tip">💡 Wenn du den Chat nicht siehst, drück gleichzeitig <code>Strg</code> + <code>Alt</code> + <code>I</code> (am Mac: <code>Control</code> + <code>Cmd</code> + <code>I</code>).</p>
+  </section>
+
+  <section class="step">
+    <h2><span>3</span>Lade den Workshop herunter</h2>
+    <p>Hier ist alles, was die KI braucht, um dich zu führen.</p>
+    <ol>
+      <li>Geh auf <a href="https://github.com/deroki/basf_games_ai_workshop">github.com/deroki/basf_games_ai_workshop</a>.</li>
+      <li>Klick auf den grünen Button <strong>„Code“</strong> und dann auf <strong>„Download ZIP“</strong>.</li>
+      <li>Such die Datei im Ordner „Downloads“, klick mit der rechten Maustaste darauf und wähle <strong>„Alle extrahieren“</strong> (am Mac: Doppelklick).</li>
+      <li>Klick in VS Code auf <strong>Datei → Ordner öffnen</strong> und wähle den gerade entpackten Ordner.</li>
+      <li>Wenn gefragt wird „Vertraust du den Autoren?“, klick auf <strong>„Ja, ich vertraue den Autoren“</strong>.</li>
+    </ol>
+  </section>
+
+  <section class="step">
+    <h2><span>4</span>Erstelle dein Spiel</h2>
+    <ol>
+      <li>Schreib im Copilot-Chat <code>/create_game</code> und drück Enter. So weckst du die KI auf, die Spiele erschafft!</li>
+      <li><strong>Beantworte ihre Fragen.</strong> Zuerst fragt sie, wie viele ihr im Team seid, dann wie das Spiel ist, wer die Figur ist, wo das Abenteuer spielt und wer die Gegner sind. Manche Fragen beantwortet das ganze Team, andere jeder Spieler der Reihe nach. Du kannst ihr sogar eine Zeichnung zeigen!</li>
+      <li><strong>Sag „OK“.</strong> Die KI erzählt dir, wie dein Spiel wird. Wenn es euch gefällt, sagt es ihr.</li>
+      <li><strong>Magie!</strong> Die KI erstellt das Spiel und es öffnet sich zum Spielen im Browser. Du steuerst es mit der Tastatur.</li>
+      <li><strong>Bitte um Verbesserungen:</strong> schneller, mehr Gegner, schönere Bilder … so oft ihr wollt, bis ihr sagt: „Das war’s, ich liebe es!“.</li>
+    </ol>
+    <p class="tip">💡 Der Trick: Je besser du deine Ideen erklärst, desto besser wird dein Spiel. Wenn etwas nicht funktioniert, sag es der KI mit deinen eigenen Worten!</p>
+  </section>
+
+  <section class="step">
+    <h2><span>5</span>Spiel wieder, wann du willst</h2>
+    <p>Dein Spiel wird im Ordner <code>games</code> im Workshop-Ordner gespeichert. Um wieder zu spielen, öffne den Ordner deines Spiels und mach einen Doppelklick auf die Datei <code>index.html</code>. Du brauchst kein Internet.</p>
+  </section>
+
+  <a class="back" href="./">← Zurück zu den Spielen</a>
+</main>
+
+<footer>
+  <div class="logo"><img src="../assets/basf-logo.svg" alt="BASF"></div>
+  <div>Videospiel-Workshop mit KI · veranstaltet vom <strong>BASF Hub Madrid</strong></div>
+</footer>
+<script>
+(function () {
+  try {
+    document.querySelectorAll('.langbar a').forEach(function (a) {
+      a.addEventListener('click', function () { localStorage.setItem('lang', a.getAttribute('data-lang')); });
+    });
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>

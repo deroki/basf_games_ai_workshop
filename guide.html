@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to create your video game with AI · BASF Hub Madrid</title>
+<style>
+  :root { --basf: #004A96; --green: #21A366; --bg: #f3f7fc; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #1b2a3a; background: var(--bg); line-height: 1.7; }
+  header { background: var(--basf); color: #fff; padding: 20px 24px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  header .logo { background: #fff; padding: 10px 16px; border-radius: 8px; }
+  header .logo img { height: 110px; display: block; }
+  header .hub { font-size: 1.1rem; letter-spacing: .5px; }
+  header .hub strong { display: block; font-size: 1.4rem; }
+  .hero { background: linear-gradient(135deg, var(--basf), #0b72d9); color: #fff; text-align: center; padding: 44px 20px 52px; }
+  .hero h1 { margin: 0 0 12px; font-size: clamp(2rem, 5vw, 3rem); }
+  .hero p { max-width: 720px; margin: 0 auto; font-size: 1.2rem; opacity: .95; }
+  main { max-width: 860px; margin: 0 auto; padding: 24px 20px 56px; }
+  a { color: var(--basf); }
+  .back { display: inline-block; margin-bottom: 8px; font-weight: 700; }
+  .step { background: #fff; border-radius: 14px; padding: 4px 24px 18px; margin: 24px 0; box-shadow: 0 3px 10px rgba(0,40,90,.08); border-left: 8px solid var(--green); }
+  .step h2 { color: var(--basf); font-size: 1.6rem; }
+  .step h2 span { display: inline-block; background: var(--green); color: #fff; border-radius: 50%; width: 2.2rem; height: 2.2rem; line-height: 2.2rem; text-align: center; margin-right: 8px; font-size: 1.2rem; }
+  code { background: #e8eef7; padding: 2px 8px; border-radius: 6px; font-size: 1.05em; }
+  .tip { background: #fff8dc; border-left: 5px solid #f0b400; padding: 10px 16px; border-radius: 8px; }
+  footer { background: var(--basf); color: #fff; text-align: center; padding: 28px 20px; }
+  footer .logo { display: inline-block; background: #fff; padding: 8px 14px; border-radius: 8px; margin-bottom: 10px; }
+  footer .logo img { height: 80px; display: block; }
+
+  .langbar { background: #00346b; padding: 8px 24px; display: flex; gap: 10px; justify-content: flex-end; align-items: center; flex-wrap: wrap; }
+  .langbar a { display: inline-flex; align-items: center; gap: 6px; color: #fff; text-decoration: none; font-size: .9rem; padding: 3px 8px; border-radius: 6px; border: 2px solid transparent; }
+  .langbar a:hover { background: rgba(255,255,255,.15); }
+  .langbar a.on { border-color: #fff; font-weight: 700; }
+  .langbar img { width: 26px; height: auto; display: block; border-radius: 2px; }
+</style>
+</head>
+<body>
+<nav class="langbar" aria-label="Language"><a class="on" href="guide.html" hreflang="en" data-lang="en"><img src="assets/flags/en.png" alt=""> English</a><a href="es/guia.html" hreflang="es" data-lang="es"><img src="assets/flags/es.png" alt=""> Español</a><a href="fr/guide.html" hreflang="fr" data-lang="fr"><img src="assets/flags/fr.png" alt=""> Français</a><a href="de/guide.html" hreflang="de" data-lang="de"><img src="assets/flags/de.png" alt=""> Deutsch</a><a href="pt/guide.html" hreflang="pt" data-lang="pt"><img src="assets/flags/pt.png" alt=""> Português</a><a href="ms/guide.html" hreflang="ms" data-lang="ms"><img src="assets/flags/ms.png" alt=""> Bahasa Melayu</a><a href="hi/guide.html" hreflang="hi" data-lang="hi"><img src="assets/flags/hi.png" alt=""> हिन्दी</a></nav>
+<header>
+  <div class="logo"><img src="assets/basf-logo.svg" alt="BASF"></div>
+  <div class="hub">Promoted by<strong>BASF Hub Madrid</strong></div>
+</header>
+
+<section class="hero">
+  <h1>🤖 Create your own video game with AI</h1>
+  <p>A step-by-step guide to do it on your computer. You don't need to know how to code!</p>
+</section>
+
+<main>
+  <a class="back" href="./">← Back to the games</a>
+  <p class="tip">💡 You need a computer with internet and, if you are under 18, an adult to help you create your accounts.</p>
+
+  <section class="step">
+    <h2><span>1</span>Install Visual Studio Code</h2>
+    <p>Visual Studio Code (we call it <strong>VS Code</strong>) is the program where you will work with the AI. It's free.</p>
+    <ol>
+      <li>Go to <a href="https://code.visualstudio.com/download">code.visualstudio.com/download</a>.</li>
+      <li>Click the button for your computer (Windows, Mac or Linux).</li>
+      <li>Open the file you downloaded and click "Next" until it finishes.</li>
+      <li>Open VS Code. You've got it!</li>
+    </ol>
+  </section>
+
+  <section class="step">
+    <h2><span>2</span>Turn on Copilot, your AI helper</h2>
+    <p><strong>GitHub Copilot</strong> is the artificial intelligence that will create your game. It has a free version to try.</p>
+    <ol>
+      <li>Create a free account at <a href="https://github.com/signup">github.com</a> (with an adult's help).</li>
+      <li>In VS Code, look at the bottom right: you will see the Copilot icon. Click it.</li>
+      <li>Click <strong>"Sign in"</strong> and log in with your GitHub account. Your browser will open: click "Authorize".</li>
+      <li>If it offers you a plan, choose <strong>Copilot Free</strong>.</li>
+      <li>The Copilot chat opens. Below the box where you type, there is a button with the name of a <strong>model</strong> (the "brain" of the AI). Click it and pick one of the available ones without a padlock. The free plan gives you a limited number of messages per month, so use them well!</li>
+    </ol>
+    <p class="tip">💡 If you can't see the chat, press <code>Ctrl</code> + <code>Alt</code> + <code>I</code> at the same time (on Mac: <code>Control</code> + <code>Cmd</code> + <code>I</code>).</p>
+  </section>
+
+  <section class="step">
+    <h2><span>3</span>Download the workshop</h2>
+    <p>Everything the AI needs to guide you is here.</p>
+    <ol>
+      <li>Go to <a href="https://github.com/deroki/basf_games_ai_workshop">github.com/deroki/basf_games_ai_workshop</a>.</li>
+      <li>Click the green <strong>"Code"</strong> button and then <strong>"Download ZIP"</strong>.</li>
+      <li>Find the file in your Downloads folder, right-click it and choose <strong>"Extract all"</strong> (on Mac, double-click it).</li>
+      <li>In VS Code click <strong>File → Open Folder</strong> and choose the folder you just extracted.</li>
+      <li>If it asks "Do you trust the authors?", click <strong>"Yes, I trust the authors"</strong>.</li>
+    </ol>
+  </section>
+
+  <section class="step">
+    <h2><span>4</span>Create your game</h2>
+    <ol>
+      <li>In the Copilot chat, type <code>/create_game</code> and press Enter. This wakes up the game-making AI!</li>
+      <li><strong>Answer its questions.</strong> First it asks how many of you are in the team, then what the game is like, who the character is, where the adventure happens and who the enemies are. Some questions are answered by the whole team and others by each player in turn. You can even show it a drawing!</li>
+      <li><strong>Say "OK".</strong> The AI tells you what your game will be like. If you like it, tell it so.</li>
+      <li><strong>Magic!</strong> The AI creates the game and it opens in your browser to play. You control it with the keyboard.</li>
+      <li><strong>Ask for improvements:</strong> faster, more enemies, better drawings… as many times as you like, until you say "That's it, I love it!".</li>
+    </ol>
+    <p class="tip">💡 The trick: the better you explain your ideas, the better your game will be. If something doesn't work, tell the AI in your own words!</p>
+  </section>
+
+  <section class="step">
+    <h2><span>5</span>Play again whenever you want</h2>
+    <p>Your game is saved in the <code>games</code> folder, inside the workshop folder. To play again, open your game's folder and double-click the <code>index.html</code> file. You don't need internet.</p>
+  </section>
+
+  <a class="back" href="./">← Back to the games</a>
+</main>
+
+<footer>
+  <div class="logo"><img src="assets/basf-logo.svg" alt="BASF"></div>
+  <div>Video game workshop with AI · promoted by <strong>BASF Hub Madrid</strong></div>
+</footer>
+<script>
+(function () {
+  try {
+    document.querySelectorAll('.langbar a').forEach(function (a) {
+      a.addEventListener('click', function () { localStorage.setItem('lang', a.getAttribute('data-lang')); });
+    });
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI से अपना वीडियो गेम कैसे बनाएँ · BASF Hub Madrid</title>
+<style>
+  :root { --basf: #004A96; --green: #21A366; --bg: #f3f7fc; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #1b2a3a; background: var(--bg); line-height: 1.7; }
+  header { background: var(--basf); color: #fff; padding: 20px 24px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  header .logo { background: #fff; padding: 10px 16px; border-radius: 8px; }
+  header .logo img { height: 110px; display: block; }
+  header .hub { font-size: 1.1rem; letter-spacing: .5px; }
+  header .hub strong { display: block; font-size: 1.4rem; }
+  .hero { background: linear-gradient(135deg, var(--basf), #0b72d9); color: #fff; text-align: center; padding: 44px 20px 52px; }
+  .hero h1 { margin: 0 0 12px; font-size: clamp(2rem, 5vw, 3rem); }
+  .hero p { max-width: 720px; margin: 0 auto; font-size: 1.2rem; opacity: .95; }
+  main { max-width: 860px; margin: 0 auto; padding: 24px 20px 56px; }
+  a { color: var(--basf); }
+  .back { display: inline-block; margin-bottom: 8px; font-weight: 700; }
+  .step { background: #fff; border-radius: 14px; padding: 4px 24px 18px; margin: 24px 0; box-shadow: 0 3px 10px rgba(0,40,90,.08); border-left: 8px solid var(--green); }
+  .step h2 { color: var(--basf); font-size: 1.6rem; }
+  .step h2 span { display: inline-block; background: var(--green); color: #fff; border-radius: 50%; width: 2.2rem; height: 2.2rem; line-height: 2.2rem; text-align: center; margin-right: 8px; font-size: 1.2rem; }
+  code { background: #e8eef7; padding: 2px 8px; border-radius: 6px; font-size: 1.05em; }
+  .tip { background: #fff8dc; border-left: 5px solid #f0b400; padding: 10px 16px; border-radius: 8px; }
+  footer { background: var(--basf); color: #fff; text-align: center; padding: 28px 20px; }
+  footer .logo { display: inline-block; background: #fff; padding: 8px 14px; border-radius: 8px; margin-bottom: 10px; }
+  footer .logo img { height: 80px; display: block; }
+
+  .langbar { background: #00346b; padding: 8px 24px; display: flex; gap: 10px; justify-content: flex-end; align-items: center; flex-wrap: wrap; }
+  .langbar a { display: inline-flex; align-items: center; gap: 6px; color: #fff; text-decoration: none; font-size: .9rem; padding: 3px 8px; border-radius: 6px; border: 2px solid transparent; }
+  .langbar a:hover { background: rgba(255,255,255,.15); }
+  .langbar a.on { border-color: #fff; font-weight: 700; }
+  .langbar img { width: 26px; height: auto; display: block; border-radius: 2px; }
+</style>
+</head>
+<body>
+<nav class="langbar" aria-label="Language"><a href="../guide.html" hreflang="en" data-lang="en"><img src="../assets/flags/en.png" alt=""> English</a><a href="../es/guia.html" hreflang="es" data-lang="es"><img src="../assets/flags/es.png" alt=""> Español</a><a href="../fr/guide.html" hreflang="fr" data-lang="fr"><img src="../assets/flags/fr.png" alt=""> Français</a><a href="../de/guide.html" hreflang="de" data-lang="de"><img src="../assets/flags/de.png" alt=""> Deutsch</a><a href="../pt/guide.html" hreflang="pt" data-lang="pt"><img src="../assets/flags/pt.png" alt=""> Português</a><a href="../ms/guide.html" hreflang="ms" data-lang="ms"><img src="../assets/flags/ms.png" alt=""> Bahasa Melayu</a><a class="on" href="guide.html" hreflang="hi" data-lang="hi"><img src="../assets/flags/hi.png" alt=""> हिन्दी</a></nav>
+<header>
+  <div class="logo"><img src="../assets/basf-logo.svg" alt="BASF"></div>
+  <div class="hub">आयोजक<strong>BASF Hub Madrid</strong></div>
+</header>
+
+<section class="hero">
+  <h1>🤖 AI के साथ अपना खुद का वीडियो गेम बनाइए</h1>
+  <p>अपने कंप्यूटर पर करने के लिए चरण-दर-चरण गाइड। आपको कोडिंग आना ज़रूरी नहीं है!</p>
+</section>
+
+<main>
+  <a class="back" href="./">← गेम्स पर वापस जाएँ</a>
+  <p class="tip">💡 आपको इंटरनेट वाला कंप्यूटर चाहिए और, अगर आप 18 साल से कम उम्र के हैं, तो अकाउंट बनाने के लिए किसी बड़े की मदद चाहिए।</p>
+
+  <section class="step">
+    <h2><span>1</span>Visual Studio Code इंस्टॉल करें</h2>
+    <p>Visual Studio Code (हम इसे <strong>VS Code</strong> कहते हैं) वह प्रोग्राम है जिसमें आप AI के साथ काम करेंगे। यह मुफ़्त है।</p>
+    <ol>
+      <li><a href="https://code.visualstudio.com/download">code.visualstudio.com/download</a> पर जाइए।</li>
+      <li>अपने कंप्यूटर (Windows, Mac या Linux) वाले बटन पर क्लिक कीजिए।</li>
+      <li>डाउनलोड हुई फ़ाइल खोलिए और खत्म होने तक "Next" पर क्लिक करते रहिए।</li>
+      <li>VS Code खोलिए। हो गया!</li>
+    </ol>
+  </section>
+
+  <section class="step">
+    <h2><span>2</span>Copilot चालू करें, आपका AI सहायक</h2>
+    <p><strong>GitHub Copilot</strong> वह कृत्रिम बुद्धिमत्ता है जो आपका गेम बनाएगी। आज़माने के लिए इसका एक मुफ़्त वर्ज़न है।</p>
+    <ol>
+      <li><a href="https://github.com/signup">github.com</a> पर मुफ़्त अकाउंट बनाइए (किसी बड़े की मदद से)।</li>
+      <li>VS Code में नीचे दाईं ओर देखिए: आपको Copilot का आइकन दिखेगा। उस पर क्लिक कीजिए।</li>
+      <li><strong>"Sign in"</strong> (साइन इन) पर क्लिक कीजिए और अपने GitHub अकाउंट से लॉग इन कीजिए। ब्राउज़र खुलेगा: "Authorize" पर क्लिक कीजिए।</li>
+      <li>अगर कोई प्लान दिखाया जाए तो <strong>Copilot Free</strong> (मुफ़्त) चुनिए।</li>
+      <li>Copilot की चैट खुल जाती है। जहाँ आप टाइप करते हैं उसके नीचे एक <strong>मॉडल</strong> (AI का "दिमाग") के नाम वाला बटन होता है। उस पर क्लिक कीजिए और बिना ताले वाला कोई एक मॉडल चुनिए। मुफ़्त प्लान में हर महीने सीमित संदेश मिलते हैं, इसलिए उन्हें सोच-समझकर इस्तेमाल कीजिए!</li>
+    </ol>
+    <p class="tip">💡 अगर आपको चैट नहीं दिख रही, तो एक साथ <code>Ctrl</code> + <code>Alt</code> + <code>I</code> दबाइए (Mac पर: <code>Control</code> + <code>Cmd</code> + <code>I</code>)।</p>
+  </section>
+
+  <section class="step">
+    <h2><span>3</span>वर्कशॉप डाउनलोड करें</h2>
+    <p>AI को आपका मार्गदर्शन करने के लिए जो कुछ चाहिए, वह सब यहाँ है।</p>
+    <ol>
+      <li><a href="https://github.com/deroki/basf_games_ai_workshop">github.com/deroki/basf_games_ai_workshop</a> पर जाइए।</li>
+      <li>हरे <strong>"Code"</strong> बटन पर क्लिक कीजिए और फिर <strong>"Download ZIP"</strong> पर।</li>
+      <li>फ़ाइल को Downloads फ़ोल्डर में ढूँढिए, उस पर राइट-क्लिक कीजिए और <strong>"Extract All"</strong> चुनिए (Mac पर डबल-क्लिक कीजिए)।</li>
+      <li>VS Code में <strong>File → Open Folder</strong> पर क्लिक कीजिए और अभी निकाला हुआ फ़ोल्डर चुनिए।</li>
+      <li>अगर पूछा जाए "क्या आप लेखकों पर भरोसा करते हैं?", तो <strong>"Yes, I trust the authors"</strong> पर क्लिक कीजिए।</li>
+    </ol>
+  </section>
+
+  <section class="step">
+    <h2><span>4</span>अपना गेम बनाइए</h2>
+    <ol>
+      <li>Copilot की चैट में <code>/create_game</code> लिखिए और Enter दबाइए। इस तरह आप गेम बनाने वाले AI को जगा देते हैं!</li>
+      <li><strong>उसके सवालों के जवाब दीजिए।</strong> पहले वह पूछता है कि टीम में आप कितने लोग हैं, फिर गेम कैसा है, किरदार कौन है, एडवेंचर कहाँ होता है और दुश्मन कौन हैं। कुछ सवालों का जवाब पूरी टीम देती है और कुछ का हर खिलाड़ी बारी-बारी से। आप उसे कोई ड्रॉइंग भी दिखा सकते हैं!</li>
+      <li><strong>"OK" कहिए।</strong> AI आपको बताता है कि आपका गेम कैसा होगा। अगर आपको पसंद आए, तो उसे बता दीजिए।</li>
+      <li><strong>जादू!</strong> AI गेम बना देता है और वह खेलने के लिए आपके ब्राउज़र में खुल जाता है। इसे कीबोर्ड से चलाया जाता है।</li>
+      <li><strong>सुधार माँगिए:</strong> और तेज़, ज़्यादा दुश्मन, बेहतर चित्र… जितनी बार चाहें, जब तक आप न कह दें "बस, मुझे बहुत पसंद आया!"।</li>
+    </ol>
+    <p class="tip">💡 तरकीब: आप अपने आइडिया जितने अच्छे से समझाएँगे, आपका गेम उतना ही अच्छा बनेगा। अगर कुछ काम न करे, तो AI को अपने शब्दों में बता दीजिए!</p>
+  </section>
+
+  <section class="step">
+    <h2><span>5</span>जब चाहें दोबारा खेलिए</h2>
+    <p>आपका गेम वर्कशॉप फ़ोल्डर के अंदर <code>games</code> फ़ोल्डर में सेव होता है। दोबारा खेलने के लिए अपने गेम का फ़ोल्डर खोलिए और <code>index.html</code> फ़ाइल पर डबल-क्लिक कीजिए। इंटरनेट की ज़रूरत नहीं है।</p>
+  </section>
+
+  <a class="back" href="./">← गेम्स पर वापस जाएँ</a>
+</main>
+
+<footer>
+  <div class="logo"><img src="../assets/basf-logo.svg" alt="BASF"></div>
+  <div>AI के साथ वीडियो गेम वर्कशॉप · आयोजक <strong>BASF Hub Madrid</strong></div>
+</footer>
+<script>
+(function () {
+  try {
+    document.querySelectorAll('.langbar a').forEach(function (a) {
+      a.addEventListener('click', function () { localStorage.setItem('lang', a.getAttribute('data-lang')); });
+    });
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
